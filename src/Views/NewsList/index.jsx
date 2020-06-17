@@ -8,13 +8,14 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexGrow: 1,
+    flex: 1,
     backgroundColor: "gray",
   },
   newsList: {
     marginTop: theme.spacing(16),
   },
   cardContainer: {
-    margin: theme.spacing(4),
+    margin: theme.spacing(2),
   },
 }));
 
@@ -29,7 +30,7 @@ const NewsList = () => {
           {news.map((item) => (
             <Grid
               item
-              xs={12}
+              xs={9}
               md={3}
               className={classes.cardContainer}
               key={item.title}
