@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { makeStyles, fade } from "@material-ui/core/styles";
 import {
@@ -8,8 +8,7 @@ import {
   InputBase,
   Button,
 } from "@material-ui/core";
-// imports
-import SearchIcon from "@material-ui/icons/Search";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -43,7 +42,6 @@ const useStyles = makeStyles((theme) => ({
     },
     marginRight: theme.spacing(2),
     marginLeft: 0,
-    // margin: "0 auto",
     width: "100%",
     marginTop: theme.spacing(6),
     padding: theme.spacing(2),
@@ -63,9 +61,11 @@ const useStyles = makeStyles((theme) => ({
   },
   inputInput: {
     padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
     transition: theme.transitions.create("width"),
+    margin: "0 auto",
+    textAlign: "center",
+    color: "black",
+    fontSize: "1.4rem",
     width: "100%",
     [theme.breakpoints.up("md")]: {
       width: "20ch",
@@ -75,14 +75,22 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(8),
   },
   searchButton: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
     borderRadius: theme.shape.borderRadius * 20,
   },
 }));
 
 const HeroSection = () => {
   const classes = useStyles();
+  const [keyword, setKeyword] = useState("");
+  const onSearchInputChange = ({ target }) => {
+    console.log(target.value);
+    setKeyword(target.value);
+  };
+  const onSearchClick = () => {
+    alert(`find news ${keyword}`);
+  };
   return (
     <div className={classes.root}>
       <Container>
@@ -108,12 +116,13 @@ const HeroSection = () => {
             <Grid item xs={12}>
               <div className={classes.search}>
                 <InputBase
-                  placeholder="Search News..."
+                  placeholder="Search Keyword..."
                   classes={{
                     root: classes.inputRoot,
                     input: classes.inputInput,
                   }}
                   inputProps={{ "aria-label": "search" }}
+                  onChange={onSearchInputChange}
                 />
               </div>
             </Grid>
@@ -133,6 +142,7 @@ const HeroSection = () => {
               color="primary"
               fullWidth
               className={classes.searchButton}
+              onClick={onSearchClick}
             >
               Find News
             </Button>
