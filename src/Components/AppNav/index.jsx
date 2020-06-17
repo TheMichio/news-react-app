@@ -12,22 +12,40 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
+  appbar: {
+    boxShadow: "none",
+    backgroundColor: `rgba(151, 163, 184 , 0.3)`,
+    padding: theme.spacing(2),
+  },
+  appbarTitle: {
+    color: "black",
+    fontFamily: `'Lobster', cursive`,
+  },
 }));
 
 const AppNav = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar position="fixed">
+      <AppBar className={classes.appbar}>
         <Toolbar>
-          <Container>
+          <Container maxWidth="md">
             <Grid
               container
               justify="center"
               alignItems="center"
               direction="row"
             >
-              <Typography component="h1">News App</Typography>
+              <Grid item zeroMinWidth>
+                <Typography
+                  component="h4"
+                  variant="h4"
+                  className={classes.appbarTitle}
+                  noWrap
+                >
+                  . . News App . .
+                </Typography>
+              </Grid>
             </Grid>
           </Container>
         </Toolbar>

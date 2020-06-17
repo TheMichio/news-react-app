@@ -2,20 +2,21 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import AppNav from "../Components/AppNav";
 import HeroSection from "../Components/HeroSection";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // display: "flex",
+    display: "flex",
   },
 }));
 
 const Layout = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <Grid container className={classes.root}>
       <AppNav />
       <HeroSection />
-    </div>
+    </Grid>
   );
 };
 
