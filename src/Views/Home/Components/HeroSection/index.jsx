@@ -11,6 +11,7 @@ import {
 
 import { getKeywordNews } from "../../../../Actions";
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -88,6 +89,7 @@ const HeroSection = () => {
   const classes = useStyles();
   const [keyword, setKeyword] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const onSearchInputChange = ({ target }) => {
     console.log(target.value);
@@ -96,6 +98,7 @@ const HeroSection = () => {
   const onSearchClick = () => {
     dispatch(getKeywordNews(keyword));
     setKeyword("");
+    history.push("/list");
   };
   return (
     <div className={classes.root}>
