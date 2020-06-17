@@ -9,6 +9,9 @@ import {
   Button,
 } from "@material-ui/core";
 
+import { getKeywordNews } from "../../Actions";
+import { useDispatch } from "react-redux";
+
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
@@ -84,12 +87,15 @@ const useStyles = makeStyles((theme) => ({
 const HeroSection = () => {
   const classes = useStyles();
   const [keyword, setKeyword] = useState("");
+  const dispatch = useDispatch();
+
   const onSearchInputChange = ({ target }) => {
     console.log(target.value);
     setKeyword(target.value);
   };
   const onSearchClick = () => {
-    alert(`find news ${keyword}`);
+    dispatch(getKeywordNews(keyword));
+    setKeyword("");
   };
   return (
     <div className={classes.root}>
@@ -121,6 +127,7 @@ const HeroSection = () => {
                     root: classes.inputRoot,
                     input: classes.inputInput,
                   }}
+                  value={keyword}
                   inputProps={{ "aria-label": "search" }}
                   onChange={onSearchInputChange}
                 />

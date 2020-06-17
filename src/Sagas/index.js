@@ -1,30 +1,28 @@
 import { getKeywordDone, getKeywordError, GET_KEYWORD_NEWS } from "../Actions";
-import { call, put, takeLatest, all } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
-const apiUrl = "www.google.com";
+const apiKey = "a2b1ab884c384d9f87cf160859d74b88";
+const getApiUrl = (keyword) =>
+  `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${apiKey}`;
 
 const fetchKeywordNews = async (keyword) => {
-  const res = await axios.get(apiUrl);
-  const data = await res.json();
-  console.log(data);
+  const res = await axios.get(getApiUrl(keyword));
+  const data = res.data.articles;
+  return data;
 };
 
-function* keywordNewsSaga(keyword) {
+function* keywordNewsSaga({ payload }) {
   try {
-    const news = yield call(fetchKeywordNews(keyword));
+    const news = yield call(fetchKeywordNews, payload);
     yield put(getKeywordDone(news));
   } catch (error) {
     yield put(getKeywordError(error));
   }
 }
 
-function* actionWatcher() {
-  yield takeLatest(GET_KEYWORD_NEWS, keywordNewsSaga);
-}
-
 function* rootSaga() {
-  yield all([actionWatcher()]);
+  yield takeLatest(GET_KEYWORD_NEWS, keywordNewsSaga);
 }
 
 export default rootSaga;

@@ -14,7 +14,7 @@ const Layout = () => {
   const classes = useStyles();
   return (
     <Grid container className={classes.root}>
-      <AppNav />
+      {/* <AppNav /> */}
       <HeroSection />
     </Grid>
   );

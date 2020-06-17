@@ -2,7 +2,10 @@ export const GET_KEYWORD_NEWS = "GET_KEYWORD_NEWS";
 export const GET_KEYWORD_DONE = "GET_KEYWORD_DONE";
 export const GET_KEYWORD_ERROR = "GET_KEYWORD_ERROR";
 
-export const getKeywordNews = () => ({ type: GET_KEYWORD_NEWS });
+export const getKeywordNews = (keyword) => ({
+  type: GET_KEYWORD_NEWS,
+  payload: keyword,
+});
 export const getKeywordDone = (news) => ({
   type: GET_KEYWORD_DONE,
   payload: news,
