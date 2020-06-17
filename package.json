@@ -2,7 +2,7 @@
   "name": "news-react-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://www.themichio.github.io/news-react-app",
+  "homepage": "http://www.themichio.github.io/news-react-app",
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "@material-ui/icons": "^4.9.1",

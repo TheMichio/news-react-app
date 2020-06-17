@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     height: "100vh",
     background: `url(
-      "/Images/background.jpeg"
+      "/images/background.jpeg"
     )`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
