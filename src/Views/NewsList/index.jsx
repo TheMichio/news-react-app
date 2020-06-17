@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
     flexGrow: 1,
+    backgroundColor: "gray",
   },
   newsList: {
     marginTop: theme.spacing(16),

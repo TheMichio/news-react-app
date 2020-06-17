@@ -8,6 +8,7 @@ import {
   InputBase,
   Button,
 } from "@material-ui/core";
+import EmptyKeywordAlert from "../EmptyKewordAlert";
 
 import { getKeywordNews } from "../../../../Actions";
 import { useDispatch } from "react-redux";
@@ -88,20 +89,33 @@ const useStyles = makeStyles((theme) => ({
 const HeroSection = () => {
   const classes = useStyles();
   const [keyword, setKeyword] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
   const history = useHistory();
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+  };
+  const handleOpenModal = () => {
+    setModalOpen(true);
+  };
 
   const onSearchInputChange = ({ target }) => {
     console.log(target.value);
     setKeyword(target.value);
   };
   const onSearchClick = () => {
-    dispatch(getKeywordNews(keyword));
-    setKeyword("");
-    history.push("/list");
+    if (keyword === "") {
+      handleOpenModal();
+    } else {
+      dispatch(getKeywordNews(keyword));
+      setKeyword("");
+      history.push("/list");
+    }
   };
   return (
     <div className={classes.root}>
+      <EmptyKeywordAlert open={modalOpen} handleCloseModal={handleCloseModal} />
       <Container>
         <Grid
           container
