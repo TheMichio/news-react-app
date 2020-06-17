@@ -26,31 +26,24 @@ const useStyles = makeStyles((theme) => ({
 const AppNav = () => {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
-      <AppBar className={classes.appbar}>
-        <Toolbar>
-          <Container maxWidth="md">
-            <Grid
-              container
-              justify="center"
-              alignItems="center"
-              direction="row"
-            >
-              <Grid item zeroMinWidth>
-                <Typography
-                  component="h4"
-                  variant="h4"
-                  className={classes.appbarTitle}
-                  noWrap
-                >
-                  . . News App . .
-                </Typography>
-              </Grid>
+    <AppBar className={classes.appbar} position="fixed">
+      <Toolbar>
+        <Container maxWidth="md">
+          <Grid container justify="center" alignItems="center" direction="row">
+            <Grid item zeroMinWidth>
+              <Typography
+                component="h4"
+                variant="h4"
+                className={classes.appbarTitle}
+                noWrap
+              >
+                . . News App . .
+              </Typography>
             </Grid>
-          </Container>
-        </Toolbar>
-      </AppBar>
-    </div>
+          </Grid>
+        </Container>
+      </Toolbar>
+    </AppBar>
   );
 };
 
