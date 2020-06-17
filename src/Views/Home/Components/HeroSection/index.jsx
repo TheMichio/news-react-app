@@ -9,7 +9,7 @@ import {
   Button,
 } from "@material-ui/core";
 
-import { getKeywordNews } from "../../Actions";
+import { getKeywordNews } from "../../../../Actions";
 import { useDispatch } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
