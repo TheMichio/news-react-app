@@ -7,6 +7,8 @@ import {
   Grid,
   Container,
 } from "@material-ui/core";
+import { Link as RouterLink } from "react-router-dom";
+import Link from "@material-ui/core/Link";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +23,12 @@ const useStyles = makeStyles((theme) => ({
     color: "black",
     fontFamily: `'Lobster', cursive`,
   },
+  simpleLink: {
+    textDecoration: "none",
+    "&:hover , &:focus": {
+      textDecoration: "none",
+    },
+  },
 }));
 
 const AppNav = () => {
@@ -31,14 +39,20 @@ const AppNav = () => {
         <Container maxWidth="md">
           <Grid container justify="center" alignItems="center" direction="row">
             <Grid item zeroMinWidth>
-              <Typography
-                component="h4"
-                variant="h4"
-                className={classes.appbarTitle}
-                noWrap
+              <Link
+                component={RouterLink}
+                to="/"
+                className={classes.simpleLink}
               >
-                . . News App . .
-              </Typography>
+                <Typography
+                  component="h4"
+                  variant="h4"
+                  className={classes.appbarTitle}
+                  noWrap
+                >
+                  . . News App . .
+                </Typography>
+              </Link>
             </Grid>
           </Grid>
         </Container>
