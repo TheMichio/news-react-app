@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     height: "100vh",
     background: `url(
-      "https://source.unsplash.com/ALM7RNZuDH8/1280*720"
+      "/Images/background.jpeg"
     )`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
@@ -101,7 +101,6 @@ const HeroSection = () => {
   };
 
   const onSearchInputChange = ({ target }) => {
-    console.log(target.value);
     setKeyword(target.value);
   };
   const onSearchClick = () => {

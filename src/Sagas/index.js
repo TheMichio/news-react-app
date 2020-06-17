@@ -2,6 +2,7 @@ import { getKeywordDone, getKeywordError, GET_KEYWORD_NEWS } from "../Actions";
 import { call, put, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 
+// This is My API Key, Please Consider getting Yours from https://newsapi.org/docs/get-started, its totally free
 const apiKey = "a2b1ab884c384d9f87cf160859d74b88";
 const getApiUrl = (keyword) =>
   `https://newsapi.org/v2/everything?q=${keyword}&apiKey=${apiKey}`;

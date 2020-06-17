@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { ThemeProvider } from "@material-ui/core/styles";
-// import App from "./App";
 import Layout from "./Layout";
 import theme from "./theme";
 import * as serviceWorker from "./serviceWorker";
@@ -19,7 +18,6 @@ ReactDOM.render(
         <Layout />
       </Provider>
     </Router>
-    {/* <App /> */}
   </ThemeProvider>,
   document.querySelector("#root")
 );
