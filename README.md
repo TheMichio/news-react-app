@@ -4,6 +4,10 @@ This project fetches recent news from sources around the world using [News API](
 
 This project is just a demo app.
 
+### Screenshot
+
+![project screenshot](https://github.com/themichio/news-react-app/blob/master/screenshot/screen-shot.png?raw=true)
+
 ## Used Libraries
 
 - React
