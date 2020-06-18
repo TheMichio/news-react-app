@@ -2,11 +2,9 @@
 
 This project fetches recent news from sources around the world using [News API](https://newsapi.org/docs/get-started).
 
-This project is just a demo app.
+### Note
 
-### Screenshot
-
-![project screenshot](https://github.com/themichio/news-react-app/blob/master/screenshot/screen-shot.png?raw=true)
+This project is just a demo app. 
 
 ## Used Libraries
 
@@ -18,3 +16,7 @@ This project is just a demo app.
 - redux
 - redux-saga
 - redux-logger
+
+### Screenshot
+
+![project screenshot](https://github.com/themichio/news-react-app/blob/master/screenshot/screen-shot.png?raw=true)
