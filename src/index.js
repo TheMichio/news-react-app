@@ -7,17 +7,14 @@ import theme from "./theme";
 import * as serviceWorker from "./serviceWorker";
 import { Provider } from "react-redux";
 import Store from "./Store";
-import { BrowserRouter as Router } from "react-router-dom";
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
     {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-    <Router>
-      <Provider store={Store}>
-        <CssBaseline />
-        <Layout />
-      </Provider>
-    </Router>
+    <Provider store={Store}>
+      <CssBaseline />
+      <Layout />
+    </Provider>
   </ThemeProvider>,
   document.querySelector("#root")
 );

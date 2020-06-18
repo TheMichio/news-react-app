@@ -12,7 +12,6 @@ import EmptyKeywordAlert from "../EmptyKewordAlert";
 
 import { getKeywordNews } from "../../../../Actions";
 import { useDispatch } from "react-redux";
-import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     height: "100vh",
     background: `url(
-      "/images/background.jpeg"
+      "https://source.unsplash.com/ALM7RNZuDH8/1280*720"
     )`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
@@ -91,7 +90,6 @@ const HeroSection = () => {
   const [keyword, setKeyword] = useState("");
   const [modalOpen, setModalOpen] = useState(false);
   const dispatch = useDispatch();
-  const history = useHistory();
 
   const handleCloseModal = () => {
     setModalOpen(false);
@@ -109,7 +107,6 @@ const HeroSection = () => {
     } else {
       dispatch(getKeywordNews(keyword));
       setKeyword("");
-      history.push("/list");
     }
   };
   return (
