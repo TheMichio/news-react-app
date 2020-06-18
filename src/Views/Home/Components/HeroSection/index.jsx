@@ -107,6 +107,8 @@ const HeroSection = () => {
     } else {
       dispatch(getKeywordNews(keyword));
       setKeyword("");
+      const section = document.querySelector("#news-list");
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
   return (

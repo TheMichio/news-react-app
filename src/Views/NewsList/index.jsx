@@ -23,8 +23,8 @@ const NewsList = () => {
   const classes = useStyles();
   const { news } = useSelector((state) => state);
   return (
-    <div className={classes.root}>
-      <AppNav />
+    <div className={classes.root} id="news-list">
+      {/* <AppNav /> */}
       <div className={classes.newsList}>
         <Grid container direction="row" justify="center">
           {news.map((item) => (
